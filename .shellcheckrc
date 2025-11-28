@@ -1,0 +1,59 @@
+# SPDX-FileType: OTHER
+# SPDX-FileType: TEXT
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: © 2023 - 2024 media-archive contributors
+# SPDX-FileContributor: KlfJoat
+
+##### Shellcheck Directives
+# https://github.com/koalaman/shellcheck/wiki/directive
+# If no `.shellcheckrc` is found in any of the parent directories, ShellCheck
+# will look in `~/.shellcheckrc` followed by the XDG config directory
+# (usually `~/.config/shellcheckrc`) on Unix.
+### Only the first file found will be used. ###
+# Note for Snap users: the Snap sandbox disallows access to hidden files. Use `shellcheckrc` without the dot instead.
+
+### Sourcing
+# Allow opening any 'source'd file, even if not specified as input
+external-sources=true
+
+# Note: Mutliple source-path directives are allowed
+# Look for 'source'd files relative to the checked script
+source-path=SCRIPTDIR
+# and also look for absolute paths in /mnt/chroot
+#source-path=/mnt/chroot
+
+
+
+
+### Optional Warnings
+# https://github.com/koalaman/shellcheck/wiki/Optional
+# This is all of them as of 0.9.0
+
+# Suggest adding a default case in case statements
+enable=add-default-case
+
+# Suggest explicitly using -n in [ $var ]
+enable=avoid-nullary-conditions
+
+# Check for additional cases where exit codes are masked
+enable=check-extra-masked-returns
+
+# Notify when set -e is suppressed during function invocation
+enable=check-set-e-suppressed
+
+# Warn when uppercase variables are unassigned
+enable=check-unassigned-uppercase
+
+# Suggest 'command -v' instead of 'which'
+enable=deprecate-which
+
+# Suggest quoting variables without metacharacters
+enable=quote-safe-variables
+
+# Require [[ and warn about [ in Bash/Ksh
+enable=require-double-brackets
+
+# Suggest putting braces around all variable references
+enable=require-variable-braces
+
+

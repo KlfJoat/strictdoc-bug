@@ -1,0 +1,80 @@
+[DOCUMENT]
+MID: 8eed48043c9148bfbbb00d1a6339a38c
+TITLE: myproj User Stories
+UID: MYUS
+VERSION: 0.1
+PREFIX: OTHER-
+OPTIONS:
+  ENABLE_MID: True
+  MARKUP: RST
+  AUTO_LEVELS: On
+  VIEW_STYLE: Table
+  NODE_IN_TOC: True
+
+[GRAMMAR]
+ELEMENTS:
+- TAG: OTHER
+  FIELDS:
+  - TITLE: MID
+    TYPE: String
+    REQUIRED: False
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: False
+  - TITLE: STATUS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TAGS
+    TYPE: Tag
+    REQUIRED: False
+  - TITLE: DISCTYPE
+    TYPE: MultipleChoice(UNKNOWN, All, BDV, HFPA, BDROM, DVDV, DVDA, DVDROM, CDDA, CDROM)
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: PERSONA
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: RATIONALE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: COMMENT
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+  - TYPE: File
+
+[OTHER]
+MID: c172051f771d4825be48f229d792b170
+UID: OTHER-1.1
+STATUS: Active
+DISCTYPE: All
+TITLE: Quis auctor elit sed vulputate mi sit amet.
+PERSONA: Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus.
+STATEMENT: Vel pharetra vel turpis nunc
+RATIONALE: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+[OTHER]
+MID: 93b93f194f0e4ae0967ac80c77427e68
+UID: OTHER-1.2
+STATUS: Active
+DISCTYPE: BDV, DVDV
+TITLE: Netus et malesuada fames ac turpis egestas.
+PERSONA: Porttitor rhoncus dolor purus non.
+STATEMENT: Ut enim ad minim veniam
+RATIONALE: Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam.
+
+[OTHER]
+MID: f5db5e9177b04f8b9e2f18a64d5968f9
+UID: OTHER-1.3
+STATUS: Active
+DISCTYPE: HFPA, DVDA, CDDA
+TITLE: Eget nullam non nisi est sit amet facilisis.
+PERSONA: Vitae congue eu consequat
+STATEMENT: Quis auctor elit sed vulputate mi sit amet.
+RATIONALE: Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus.

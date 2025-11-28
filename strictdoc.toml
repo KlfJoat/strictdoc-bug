@@ -1,0 +1,74 @@
+# SPDX-FileType: OTHER
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: © 2024 - 2025
+# SPDX-FileContributor: KlfJoat
+
+[project]
+title = "myproj Requirements Documentation"
+
+# When the REQUIREMENT_TO_SOURCE_TRACEABILITY feature is activated, StrictDoc
+# looks for source files in the directory from which the strictdoc program is run.
+# (and all subdirectories). This overrides that.
+#source_root_path = "bin/"
+
+
+# The * expands to any combination of symbols that represent a valid file name,
+# excluding the forward and backward slashes, which limits this wildcard to
+# only match a single directory.
+# The ** expands to any combination of valid file name symbols, possibly separated
+# by any number of slashes.
+
+
+# When the REQUIREMENT_TO_SOURCE_TRACEABILITY feature is enabled, StrictDoc
+# will include or exclude paths to source files.
+# These stack, with include first.
+#include_source_paths = [ "src/**" ]
+
+exclude_source_paths = [
+  ".git/**",
+  "docgen/**",
+  ".*",
+  "**/*.log",
+  "docs/.*",
+  "docs/adr/*",
+  "**/test/bats_helpers/**",
+  "**/test/_resources/**"
+]
+
+
+# Include/exclude document paths. These stack, with include first.
+include_doc_paths = [
+  "docs/*.sdoc"
+]
+
+#exclude_doc_paths = [ "tests/**" ]
+
+# By default, StrictDoc copies its CSS/JS and other asset files to a folder named `_static`
+# in the HTML output directory.
+# Sometimes, it is desirable to change the folder name. For example, the GitHub Pages
+# static website engine expects such assets to be found in the `assets` folder.
+html_assets_strictdoc_dir = "assets"
+
+# StrictDoc uses caching when reading and writing artifacts.
+# By default, all cache files are stored in the `output/_cache` directory.
+# If a custom output directory is specified, the cache will be placed in
+# the `_cache` subdirectory within that output directory.
+# It is possible to override the default cache location.
+# One reserved value for this parameter is $TMPDIR which makes StrictDoc
+# generate temporary files in the OS temporary directory under `strictdoc_cache` folder.
+#cache_dir = "./strictdoc_cache"
+
+features = [
+  # Stable features that are enabled by default.
+  "TABLE_SCREEN",
+  "TRACEABILITY_SCREEN",
+  "DEEP_TRACEABILITY_SCREEN",
+
+  # Experimental features
+  # "REQIF",
+  #"HTML2PDF",
+  #"DIFF",
+  "PROJECT_STATISTICS_SCREEN",
+  "STANDALONE_DOCUMENT_SCREEN",
+  "REQUIREMENT_TO_SOURCE_TRACEABILITY"
+]
