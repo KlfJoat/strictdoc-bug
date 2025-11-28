@@ -26,11 +26,11 @@ title = "myproj Requirements Documentation"
 
 exclude_source_paths = [
   ".git/**",
-  "docgen/**",
-  ".*",
+  "output/**",
+  ".**",
   "**/*.log",
-  "docs/.*",
-  "docs/adr/*",
+  "docs/.**",
+  "docs/adr/**",
   "**/test/bats_helpers/**",
   "**/test/_resources/**"
 ]

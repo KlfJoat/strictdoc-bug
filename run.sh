@@ -7,7 +7,7 @@ set -x
 mkdir --parents output
 
 # Cleanup previous output
-/bin/rm --recursive output/*
+/bin/rm --preserve-root=all --recursive --force -- output/*
 
 # Do the thing
 strictdoc --debug export --config=strictdoc.toml --formats=html --output-dir=output/ . | tee output/strictdoc.log
