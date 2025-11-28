@@ -29,7 +29,7 @@ exclude_source_paths = [
   "output/**",
   ".**",
   "**/*.log",
-  "docs/.**",
+  "docs/.*",
   "docs/adr/**",
   "**/test/bats_helpers/**",
   "**/test/_resources/**"
